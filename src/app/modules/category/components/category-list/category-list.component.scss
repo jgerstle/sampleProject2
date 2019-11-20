@@ -1,0 +1,9 @@
+.list-wrapper {
+	padding: 30px;
+	ml-category {
+		display: block;
+	}
+	ml-category + ml-category {
+		padding-top:20px;
+	}
+}

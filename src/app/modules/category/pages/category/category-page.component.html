@@ -1,0 +1,4 @@
+<ml-toolbar (add)="addCategory()" (delete)="deleteCategory()" (edit)="editCategory()"
+			[hasItemSelected]="selectedCategoryId$ | async" title="Categories"></ml-toolbar>
+<ml-category-list (selectCategory)="selectCategory($event)" [categories]="categories$ | async"
+				  [selectedCategoryId]="selectedCategoryId$ | async"></ml-category-list>

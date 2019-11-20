@@ -1,0 +1,4 @@
+<div class="list-wrapper">
+	<ml-category (click)="selectCategory.emit(category)" *ngFor="let category of categories" [category]="category"
+		[selected]="selectedCategoryId === category.id"></ml-category>
+</div>
