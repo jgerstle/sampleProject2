@@ -7,7 +7,7 @@ import { select, Store } from '@ngrx/store';
 import { AddCategory, DeleteCategory, EditCategory, SelectCategory } from '@app/store/category/category.actions';
 import { Observable } from 'rxjs';
 import { getSelectedCategory, getSelectedCategoryId, selectAllCategories } from '@app/store/category/category.selectors';
-import { first, tap } from 'rxjs/operators';
+import { first } from 'rxjs/operators';
 
 @Component({
 	selector: 'ml-category-page',
@@ -20,8 +20,7 @@ export class CategoryPageComponent {
 
 	constructor(private dialog: MatDialog, private store: Store<MlState>) {
 		this.categories$ = this.store.pipe(select(selectAllCategories));
-		this.selectedCategoryId$ = this.store.pipe(select(getSelectedCategoryId), tap(console.log));
-		this.selectedCategoryId$.subscribe(c => console.log(c));
+		this.selectedCategoryId$ = this.store.pipe(select(getSelectedCategoryId));
 	}
 
 	addCategory() {
